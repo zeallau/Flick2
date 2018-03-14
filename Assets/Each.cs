@@ -17,15 +17,17 @@ public class Each : MonoBehaviour {
         {
             if(Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                Debug.Log("Touch Began");
+                Debug.Log("BeganPos is " + Input.GetTouch(0).position);
             }
+            /*
             if(Input.GetTouch(0).phase == TouchPhase.Moved)
             {
-                Debug.Log("Touch Moved");
+                Debug.Log("MovedPos is " + Input.GetTouch(0).position);
             }
+            */
             if(Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                Debug.Log("Touch Ended ");
+                Debug.Log("EndedPos is " + Input.GetTouch(0).position);
             }
         }
         

@@ -25,7 +25,7 @@ public class DiscController : MonoBehaviour {
     private GameObject DiscText;
     private int disc = 5;
 
-    private Touch touch;
+    
     
 
     // Use this for initialization
@@ -62,16 +62,16 @@ public class DiscController : MonoBehaviour {
         {
             if(Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                touchStartPos = new Vector2(touch.position.x,
-                                        touch.position.y);
+                touchStartPos = new Vector3(Input.GetTouch(0).position.x,
+                                        Input.GetTouch(0).position.y, -10.0f);
             touchStartworldPos = Camera.main.ScreenToWorldPoint(touchStartPos);
                 Debug.Log("touchStartworldPos is " + touchStartworldPos);
             }
-
+            
             if (Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                touchEndPos = new Vector2(touch.position.x,
-                                      touch.position.y);
+                touchEndPos = new Vector3(Input.GetTouch(0).position.x,
+                                      Input.GetTouch(0).position.y,-10.0f);
 
                 touchEndworldPos = Camera.main.ScreenToWorldPoint(touchEndPos);
                 Debug.Log("touchEndworldPos is" + touchEndworldPos);
