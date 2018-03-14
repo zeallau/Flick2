@@ -25,6 +25,9 @@ public class DiscController : MonoBehaviour {
     private GameObject DiscText;
     private int disc = 5;
 
+    private Touch touch;
+    
+
     // Use this for initialization
     void Start () {
         discSpawnPos = new Vector3(Random.Range(-2.6f, 2.6f), -4f, 0.0f);
@@ -35,7 +38,9 @@ public class DiscController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Flick();
+        //Flick();
+
+        FingerFlick();
 
         if (movedDistance < clickDistance.magnitude)
         { 
@@ -49,6 +54,43 @@ public class DiscController : MonoBehaviour {
         DiscRespawn();
     }
 
+
+    
+    void FingerFlick()
+    {
+        if(Input.touchCount > 0)
+        {
+            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                touchStartPos = new Vector2(touch.position.x,
+                                        touch.position.y);
+            touchStartworldPos = Camera.main.ScreenToWorldPoint(touchStartPos);
+                Debug.Log("touchStartworldPos is " + touchStartworldPos);
+            }
+
+            if (Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                touchEndPos = new Vector2(touch.position.x,
+                                      touch.position.y);
+
+                touchEndworldPos = Camera.main.ScreenToWorldPoint(touchEndPos);
+                Debug.Log("touchEndworldPos is" + touchEndworldPos);
+
+                
+                //Get click Distance
+                clickDistance = (touchEndworldPos - touchStartworldPos) * 2.5f;
+                //Debug.Log("clickDistance is" + clickDistance.magnitude);
+
+                movedDistance = 0.0f;
+            }
+
+        }
+
+    }
+    
+
+
+    /*
     //Flick to Move
     void Flick()
     {
@@ -80,6 +122,8 @@ public class DiscController : MonoBehaviour {
         }
         
     }
+    */
+
 
     void DiscRespawn()
     {

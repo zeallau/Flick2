@@ -31,6 +31,7 @@ public class TargetScript : MonoBehaviour {
 
 
         targetSpawnPos = new Vector3(Random.Range(-1.0f, 1.0f), Random.Range(1.2f, 1.9f), 0.0f);
+        //targetSpawnPos = new Vector3(Random.Range(-1.0f, 1.0f), 10.0f, 0.0f);
         this.gameObject.transform.position = targetSpawnPos;
         targetRadius = GetComponent<CircleCollider2D>().radius;
         

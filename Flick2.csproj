@@ -305,6 +305,7 @@
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\Wall.cs" />
     <Compile Include="Assets\Dungeon\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Dungeon\TutorialInfo\Scripts\TutorialInfo.cs" />
+    <Compile Include="Assets\Each.cs" />
     <Compile Include="Assets\ItemSpawnScript.cs" />
     <Compile Include="Assets\MainScene\DiscController.cs" />
     <Compile Include="Assets\MainScene\TargetScript.cs" />

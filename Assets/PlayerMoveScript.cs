@@ -18,6 +18,7 @@ public class PlayerMoveScript : MonoBehaviour {
 	void Update () {
         CharControl();
 
+
     }
 
     //why it will keep calling Main Scene?
@@ -29,7 +30,8 @@ public class PlayerMoveScript : MonoBehaviour {
         //it should be only call once.
         if(nextScene == false)
         {
-            SceneManager.LoadScene("Main", LoadSceneMode.Additive);
+            //SceneManager.LoadScene("Main", LoadSceneMode.Additive);
+            SceneManager.LoadScene("Main");
             nextScene = true;
         }
 
