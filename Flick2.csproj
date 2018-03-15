@@ -295,6 +295,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\CameraScript.cs" />
+    <Compile Include="Assets\DiscController.cs" />
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\BoardManager.cs" />
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\Enemy.cs" />
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\GameManager.cs" />
@@ -303,13 +304,12 @@
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\Player.cs" />
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Dungeon\_Complete-Game\Scripts\Wall.cs" />
+    <Compile Include="Assets\Dungeon\PlayerMoveScript.cs" />
     <Compile Include="Assets\Dungeon\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Dungeon\TutorialInfo\Scripts\TutorialInfo.cs" />
-    <Compile Include="Assets\Each.cs" />
     <Compile Include="Assets\ItemSpawnScript.cs" />
-    <Compile Include="Assets\MainScene\DiscController.cs" />
-    <Compile Include="Assets\MainScene\TargetScript.cs" />
-    <Compile Include="Assets\PlayerMoveScript.cs" />
+    <Compile Include="Assets\TargetScript.cs" />
+    <Compile Include="Assets\ToMainScene.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Dungeon\Fonts\OFL.txt" />

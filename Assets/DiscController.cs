@@ -23,7 +23,7 @@ public class DiscController : MonoBehaviour {
     private Vector3 discSpawnPos;
 
     private GameObject DiscText;
-    private int disc = 5;
+    private int disc = 10;
 
     
     
@@ -38,9 +38,9 @@ public class DiscController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //Flick();
+        Flick();
 
-        FingerFlick();
+        //FingerFlick();
 
         if (movedDistance < clickDistance.magnitude)
         { 
@@ -55,7 +55,7 @@ public class DiscController : MonoBehaviour {
     }
 
 
-    
+    /*
     void FingerFlick()
     {
         if(Input.touchCount > 0)
@@ -87,10 +87,10 @@ public class DiscController : MonoBehaviour {
         }
 
     }
+    */
+
+
     
-
-
-    /*
     //Flick to Move
     void Flick()
     {
@@ -122,7 +122,7 @@ public class DiscController : MonoBehaviour {
         }
         
     }
-    */
+    
 
 
     void DiscRespawn()
@@ -131,7 +131,7 @@ public class DiscController : MonoBehaviour {
         {
             Start();
             this.disc -= 1;
-            this.DiscText.GetComponent<Text>().text = "Disc: " + disc + " / 5";
+            this.DiscText.GetComponent<Text>().text = "Disc: " + disc + " / 10";
         }
     }
 }

@@ -5,11 +5,13 @@ using UnityEngine.UI;
 
 public class TargetScript : MonoBehaviour {
 
+    //Get Target Pos
     private Vector3 targetSpawnPos;
     private float lastDTC;
     private float currentDTC;
     private float finalDTC;
 
+    //Setup target score
     private GameObject disc;
     private float discToCenter;
     private float targetRadius;
@@ -17,12 +19,16 @@ public class TargetScript : MonoBehaviour {
     private float scoreRed;
     private float scoreBlue;
 
+    //To force script run step by step
     bool getDTC = false;
     bool scoring = false;
     bool scoreUp = false;
+    
 
     private GameObject scoreText;
     private int score = 0;
+
+    
 
     // Use this for initialization
     void Start () {
@@ -42,6 +48,7 @@ public class TargetScript : MonoBehaviour {
         getDTC = true;
         scoring = false;
         scoreUp = false;
+        
     }
 
     // Update is called once per frame
@@ -79,6 +86,7 @@ public class TargetScript : MonoBehaviour {
                 
                 Debug.Log("+ 100 Score.");
                 scoreUp = false;
+                
 
             }
             else if (finalDTC > scoreYellow && finalDTC <= scoreRed && scoreUp == true)
@@ -88,6 +96,7 @@ public class TargetScript : MonoBehaviour {
 
                 Debug.Log("Get + 50 Score.");
                 scoreUp = false;
+                
             }
             else if (finalDTC > scoreRed && finalDTC <= scoreBlue && scoreUp == true)
             {
@@ -95,12 +104,16 @@ public class TargetScript : MonoBehaviour {
                 this.scoreText.GetComponent<Text>().text = "Score: " + this.score + "pt";
                 Debug.Log(" + 20 Score.");
                 scoreUp = false;
+                
             }
             else if (finalDTC > scoreBlue && finalDTC <= targetRadius && scoreUp == true)
             {
                 Debug.Log("Get + 0 Score. Missing");
                 scoreUp = false;
+                
             }
+            
+
             if (getDTC)
             {
                 getDTC = false;
@@ -109,11 +122,14 @@ public class TargetScript : MonoBehaviour {
 
     }
 
+
     void Respawn()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            Start();
+            
+               Start();
+            
         }
     }
     
